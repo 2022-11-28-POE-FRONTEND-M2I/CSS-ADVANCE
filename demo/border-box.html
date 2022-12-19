@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border box</title>
+  <style>
+    * {
+      /*
+      on reinitialise les margin et padding sur tous les éléments
+      car les navigateurs ajoutent du style supplémentaire à certains
+      éléments, ce qui peut fausser notre mise en page
+      */
+      margin: 0;
+      padding: 0;
+      /*
+      margin, padding et border inclut dans la valeur du with
+      ce qui fait que mes 2 paragraphes sont côte à côte
+      avec la valeur par défaut content-box, on aurait eu un paragraphe
+      en dessous de l'autre
+      */
+      box-sizing: border-box;
+    }
+    
+    p {
+      text-align: center;
+      display: inline-block;
+      width: 50%;
+      padding: 15px;
+      border: 1px solid #141414;
+      background-color: orange;
+    }
+    
+  </style>
+</head>
+<body>
+  <div>
+    <p>1</p><p>2</p>
+  </div>
+</body>
+</html>
