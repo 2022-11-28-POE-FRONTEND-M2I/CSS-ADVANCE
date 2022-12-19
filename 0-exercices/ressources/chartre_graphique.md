@@ -4,21 +4,21 @@
 
 Affichez le logo ici.
 
-### Couleurs
+## Couleurs
 
 Listez les couleurs utilisées ci-après en donnant les valeurs en hexadécimal.
 
-### Icônes
+## Icônes
 
 Listez toutes vos icônes ici.
 
-### Polices
+## Polices
 
 Listez toutes vos polices ici (avec le lien direct depuis Google Font).
 
 Spécifiez à quels éléments doivent être appliqué chaque police.
 
-#### Exemples
+### Exemples
 
 - *Roboto medium 20px* pour le titre de niveau 1 *h1*
 
@@ -28,6 +28,6 @@ Spécifiez à quels éléments doivent être appliqué chaque police.
 
 - etc
 
-### Maquettes
+## Maquettes
 
 Affichez toutes vos maquettes ici au format images (png ou jpeg).
