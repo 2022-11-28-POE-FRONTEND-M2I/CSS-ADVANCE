@@ -1,4 +1,4 @@
-## Charte graphique
+# Charte graphique
 
 ## Logo
 
