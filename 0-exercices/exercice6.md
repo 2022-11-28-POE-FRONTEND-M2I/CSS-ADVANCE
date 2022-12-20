@@ -3,7 +3,7 @@
 ## Modalités
 
 - Versionnez le code avec `Git` et `GitHub`
-- Reutilisez le code HTML et CSS réalisés dans l'exercice 5 avec les maquettes 2 et 3
+- Réutilisez le code HTML et CSS réalisés dans l'exercice 5 avec les maquettes 2 et 3
 
 ## Enoncé
 
