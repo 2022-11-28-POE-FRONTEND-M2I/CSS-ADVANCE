@@ -1,6 +1,6 @@
-# Correction jeu Flexbox-Froggy
+### Correction CSS Diner
 
-[Lien Flexbox-Froggy](http://flexboxfroggy.com/#fr)
+[Lien CSS Diner](https://flukeout.github.io/)
 
 ## Niveau 1
 
@@ -97,3 +97,35 @@
 ## Niveau 24
 
 ![level24](img/24.png)
+
+## Niveau 25
+
+![level25](img/25.png)
+
+## Niveau 26
+
+![level26](img/26.png)
+
+## Niveau 27
+
+![level27](img/27.png)
+
+## Niveau 28
+
+![level28](img/28.png)
+
+## Niveau 29
+
+![level29](img/29.png)
+
+## Niveau 30
+
+![level30](img/30.png)
+
+## Niveau 31
+
+![level31](img/31.png)
+
+## Niveau 32
+
+![level32](img/32.png)
