@@ -1,0 +1,22 @@
+@mixin div-responsive($h: 50px) {
+  &:first-of-type {
+    height: $h;
+    line-height: $h;
+  }
+
+  &:nth-of-type(2) {
+    display: none;
+  }
+}
+
+
+@mixin grid-row-item-and-bgcolor($start, $end, $bgcolor: white) {
+  grid-row-start: $start;
+  grid-row-end: $end;
+  background-color: $bgcolor;
+}
+
+@mixin grid-full-first-row {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
