@@ -8,15 +8,13 @@ main {
   grid-template-rows: repeat(9, 80px);
   border: 1px solid #ccc;
 }
-
-div {
+main div {
   text-align: center;
   color: #fff;
   font-size: 2em;
   font-weight: 900;
 }
-
-div:first-of-type {
+main div:first-of-type {
   color: #141414;
   background-color: #fff;
   grid-column-start: 1;
@@ -24,29 +22,25 @@ div:first-of-type {
   grid-row-start: 1;
   grid-row-end: 2;
 }
-
-div:nth-of-type(2) {
+main div:nth-of-type(2) {
   background-color: #8C8C8C;
   grid-row-start: 2;
   grid-row-end: 9;
   line-height: 640px;
 }
-
-div:nth-of-type(3) {
+main div:nth-of-type(3) {
   background-color: #A6A6A6;
   grid-row-start: 2;
   grid-row-end: 5;
   line-height: 320px;
 }
-
-div:nth-of-type(4) {
+main div:nth-of-type(4) {
   background-color: #737373;
   grid-row-start: 5;
   grid-row-end: 9;
   line-height: 320px;
 }
-
-div:last-of-type {
+main div:last-of-type {
   background-color: #BFBFBF;
   grid-column-start: 1;
   grid-column-end: -1;

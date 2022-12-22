@@ -11,64 +11,67 @@ main {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(9, 80px);
   border: 1px solid #ccc;
+
+  div {
+    text-align: center;
+    color: $white;
+    font-size: 2em;
+    font-weight: $fw-900;
+
+    &:first-of-type {
+      color: $black;
+      background-color: $white;
+      grid-column-start: 1;
+      grid-column-end: -1;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+
+    &:nth-of-type(2) {
+      background-color: $grey-1;
+      grid-row-start: 2;
+      grid-row-end: 9;
+      line-height: calc(8 * $grid-row-height);
+    }
+
+    &:nth-of-type(3) {
+      background-color: $grey-2;
+      grid-row-start: 2;
+      grid-row-end: 5;
+      line-height: calc(4 * $grid-row-height);
+    }
+
+    &:nth-of-type(4) {
+      background-color: $grey-3;
+      grid-row-start: 5;
+      grid-row-end: 9;
+      line-height: calc(4 * $grid-row-height);
+    }
+
+    &:last-of-type {
+      background-color: $grey-4;
+      grid-column-start: 1;
+      grid-column-end: -1;
+      line-height: $grid-row-height;
+    }
+  }
 }
 
-div {
-  text-align: center;
-  color: $white;
-  font-size: 2em;
-  font-weight: $fw-900;
-}
-
-div:first-of-type {
-  color: $black;
-  background-color: $white;
-  grid-column-start: 1;
-  grid-column-end: -1;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-
-div:nth-of-type(2) {
-  background-color: $grey-1;
-  grid-row-start:2;
-  grid-row-end: 9;
-  line-height: calc(8 * $grid-row-height);
-}
-
-div:nth-of-type(3) {
-  background-color: $grey-2;
-  grid-row-start: 2;
-  grid-row-end:5;
-  line-height: calc(4 * $grid-row-height);
-}
-
-div:nth-of-type(4) {
-  background-color: $grey-3;
-  grid-row-start: 5;
-  grid-row-end:9;
-  line-height: calc(4 * $grid-row-height);
-}
-
-div:last-of-type {
-  background-color: $grey-4;
-  grid-column-start: 1;
-  grid-column-end: -1;
-  line-height: $grid-row-height;
-}
 
 
 @media screen and (max-width: $media-sm) {
   main {
     display: block;
   }
-  
-  div:first-of-type {
-    height: $h-65;
-    line-height: $h-65;
-  }
 
-  div:nth-of-type(2) {
-    display: none;
+  div {
+    &:first-of-type {
+      height: $h-65;
+      line-height: $h-65;
+    }
+
+    &:nth-of-type(2) {
+      display: none;
+    }
   }
 }
