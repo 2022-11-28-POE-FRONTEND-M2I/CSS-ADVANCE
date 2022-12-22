@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maquette 2</title>
+  <style>
+    :root {
+      
+    }
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(9, 80px);
+    }
+
+    div {
+      text-align: center;
+    }
+
+    div:first-of-type {
+      background-color: #ccc;
+      grid-row-start: 1;
+      grid-row-end: 9;
+      line-height: calc(8 * 80px);
+    }
+    div:nth-of-type(2) {
+      background-color: aqua;
+      grid-row-start: 1;
+      grid-row-end:5;
+      line-height: calc(4 * 80px);
+    }
+
+    div:nth-of-type(3) {
+      background-color: orange;
+      grid-row-start: 5;
+      grid-row-end:9;
+    }
+
+    div:last-of-type {
+      background-color: blueviolet;
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+
+header {
+  border : 1px solid #ccc;
+  /* position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100; */
+}
+
+header + div {
+  border: 5px inset #fff;
+  text-align: center;
+
+}
+
+header + div > div {
+  height: 250px;
+  background-color: #808080;
+  border : 1px solid #141414;
+  margin: 1px 1px 75px;
+}
+
+header + div {
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+}

@@ -1,0 +1,95 @@
+* {
+  /*
+  Width = taille élément + border + padding + margin
+  avec la valeur par défaut content-box au width viennent s'ajouter border, padding et margin
+    donc on dépasse la valeur du width indiqué
+    votre élément passera à la ligne s'il n'a plus suffisamment d'espace pour se positionner
+  */
+  box-sizing: border-box;
+}
+
+img {
+  padding: 10px;
+  width: 48px;
+  margin-left: 10px;
+}
+
+main {
+  display: grid;
+  gap: 40px 1px;
+  grid-template-rows: 50px repeat(2, 150px); /* 3 lignes*/
+  grid-template-columns: repeat(4, 5px 200px) 5px; /*  9 colonnes */
+}
+
+header {
+  grid-row-start: 1;
+  /*grid-row-end: 2; optionnel, par défaut un élement dans le grid occupe une cellule (colonne * ligne) */
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+div {
+  /*
+  Pour compenser le gap de 40px entre chaque ligne
+  On décale nos divs de 35px vers le haut
+  */
+  position: relative;
+  bottom: 35px;
+  color: #fff;
+  font-size: 2rem;
+  background-color: #2d2d2d;
+  text-align: center;
+  /* pour aligner un élément de type block verticalement
+  il faut donner à line-height la même dimension que la valeur de la propriété height
+  */
+  line-height: 150px; 
+}
+
+/*
+Factorisation
+*/
+div:nth-of-type(1),
+div:nth-of-type(2),
+div:nth-of-type(3),
+div:nth-of-type(4) {
+  grid-row-start: 2;
+}
+
+div:nth-of-type(5),
+div:nth-of-type(6),
+div:nth-of-type(7),
+div:nth-of-type(8) {
+  grid-row-start: 3;
+}
+
+div:first-of-type {
+  grid-column-start: 2;
+}
+
+div:nth-of-type(2) {
+  grid-column-start: 4;
+}
+
+div:nth-of-type(3) {
+  grid-column-start: 6;
+}
+
+div:nth-of-type(4) {
+  grid-column-start: 8;
+}
+
+div:nth-of-type(5) {
+  grid-column-start: 2;
+}
+
+div:nth-of-type(6) {
+  grid-column-start: 4;
+}
+
+div:nth-of-type(7) {
+  grid-column-start: 6;
+}
+
+div:nth-of-type(8) {
+  grid-column-start: 8;
+}
