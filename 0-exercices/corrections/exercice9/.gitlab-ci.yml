@@ -1,0 +1,65 @@
+# ------------------------------------------ Ce qui était demandé, mais qui ne pouvait pas fonctionner à cause du fichier sass.dart qui ne peut pas être exécuté sur GitLab
+
+stages: 
+- build
+
+variables: 
+  SCSS : demo/sass/main.scss 
+  CSS : demo/sass/main.css
+
+build:production:
+  stage: build
+  script:
+    - ./dart-sass/sass.bat ${SCSS} ${CSS} --style=compressed
+  only:
+    - main
+
+build:dev:
+  stage: build
+  script:
+    - ./dart-sass/sass.bat ${SCSS} ${SCSS} ${CSS}
+  except:
+    - main
+
+# ----------------------------------------- Les modifications apportées pour qu'il fonctionne sur GitLab
+image: node:latest # On a besoin de l'environnement Node pour installer sass, grâce à "image" on peut avoir l'environnement de base pour construire notre application 
+
+stages: # Permet de définir les étapes
+- sass-install
+- build # on définit l'étape build pour compilation
+
+variables: # on définit nos variables pour éviter la répétition et pouvoir maintenir facilement le script
+  SCSS : demo/sass/main.scss 
+  CSS : demo/sass/main.css
+
+cache: # garder le dossier node_modules en cache, car on va en avoir besoin dans les scripts pour compiler le scss en css
+  paths:
+    - node_modules
+sass:install: # tâche d'installation de sass (ce que vous avez fait manuellement en premier)
+  stage: sass-install
+  script:
+    - npm install sass
+
+build:production: # tâche réservée à la production qui sera exécuté uniquement sur la branche main, vous pouvez appelez cette tâche comme bon vous semble
+  stage: build # une tâche rattaché à l'étape build
+  script: # les scripts à exécuté, ici la compilation du scss en css compressé (suppression commentaires, espace etc. => fichier plus léger et rapide à charger pour l'environnement de production)
+    - ./node_modules/.bin/sass ${CSS} --style=compressed # à proprement dit notre script
+    # il peut y en avoir plusieurs juste après ici en commençant par -
+  artifacts: # sert à garder les fichiers qu'on pourra récupérer depuis gitlab
+    paths: # indique le chemin vers le dossier ou fichier à garder
+      - ${CI_PROJECT_DIR}/${CSS}
+    expire_in: "1 week" # conservation durant une semaine sur gitlab
+  only:
+    - main # de la ligne 16 à ici, ça sera exécuté uniquement si on push sur la branche main
+
+# ici exactement les mêmes étapes que précédemment sauf que c'est dédié à toutes les autres branches sauf la branche main
+build:dev:
+  stage: build
+  script:
+    - ./node_modules/.bin/sass ${SCSS} ${CSS}
+  artifacts:
+    paths:
+      - ${CI_PROJECT_DIR}/${CSS}
+    expire_in: "1 week"
+  except:
+    - main
