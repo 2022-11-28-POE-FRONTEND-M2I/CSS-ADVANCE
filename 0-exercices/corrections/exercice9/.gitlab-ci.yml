@@ -3,7 +3,7 @@
 # En plus des tâches de base, on peut rajouter des tâches supplémentaires comme des tests, qualité, etc.
 #
 
-# ------------------------------------------ Ce qui était demandé, mais qui ne pouvait pas fonctionner à cause du fichier sass.dart qui ne peut pas être exécuté sur GitLab
+# ------------------------------------------ Ce qui était demandé, mais qui ne pouvait pas fonctionner à cause du fichier sass.dart qui ne peut pas être exécuté sur GitLab sans avoir installé l'environnement adequate
 
 stages: 
 - build
@@ -50,7 +50,7 @@ build:production: # tâche réservée à la production qui sera exécuté unique
   script: # les scripts à exécuter, ici la compilation du scss en css compressé (suppression commentaires, espace etc. => fichier plus léger et rapide à charger pour l'environnement de production)
     - ./node_modules/.bin/sass ${SCSS} ${CSS} --style=compressed # à proprement dit notre script
     # il peut y en avoir plusieurs juste après ici en commençant par -
-  artifacts: # sert à garder les fichiers qu'on pourra récupérer depuis gitlab
+  artifacts: # sert à garder les fichiers qu'on pourra télécharger depuis GitLab
     paths: # indique le chemin vers le dossier ou fichier à garder
       - ${CI_PROJECT_DIR}/${CSS}
     expire_in: "1 week" # conservation durant une semaine sur gitlab

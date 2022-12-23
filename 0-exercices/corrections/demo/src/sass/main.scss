@@ -1,0 +1,64 @@
+@import 'utils/colors';
+@import 'utils/numbers';
+@import 'utils/mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(13, minmax($h-50, 1fr));
+  gap: $h-2;
+
+  div {
+    border: $h-1 solid $grey-1;
+    text-align: center;
+
+    &:first-child {
+      grid-column: 1;
+      grid-row: 1 / -1;
+    }
+
+    &:nth-of-type(2) {
+      grid-row: 1 / span 3;
+      background-color: $grey-2;
+    }
+
+    &:first-child,
+    &:nth-of-type(3) {
+      background-color: $grey-3;
+    }
+
+    &:nth-of-type(3) {
+      grid-column: 3;
+      grid-row: 1 / -1;
+    }
+  }
+}
+
+header {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  header,
+  main {
+    display: block;
+    font-size: (25px - 10px)
+  }
+
+  header {
+    height: $h-50;
+  }
+
+  main {
+    border: $h-1 solid $grey-3;
+  }
+
+  div {
+    @include responsive-div;
+  }
+}
