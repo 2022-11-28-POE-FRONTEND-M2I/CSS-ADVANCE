@@ -1,0 +1,33 @@
+$widths: (
+  100: (
+    width: 100%
+  ),
+  75: (
+    width: 75%
+  ),
+  66: (
+    width: 66%
+  ),
+  50: (
+    width: 50%
+  ),
+  33: (
+    width: 33%
+  )
+);
+
+$input-types : 
+text,
+password,
+email,
+url,
+date,
+month,
+time,
+datetime,
+datetime-local,
+week,
+number,
+search,
+tel,
+color;

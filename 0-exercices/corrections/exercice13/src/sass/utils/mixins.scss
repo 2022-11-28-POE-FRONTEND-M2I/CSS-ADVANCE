@@ -1,0 +1,28 @@
+@mixin black-gradient () {
+  background-image: linear-gradient(
+    transparent,
+    $black-005 40%,
+    $black-01
+  );
+}
+
+@mixin bg-bottom-d-block {
+  margin-bottom: $em-03;
+  display: block;
+}
+
+@mixin bg-cursor-color {
+  cursor: not-allowed;
+  background-color: $lighter;
+  color: $light-color;
+}
+
+@mixin form-styles {
+    padding: $em-05 $em-06;
+    display: inline-block;
+    border: $px-1 solid $grey;
+    box-shadow: inset $zero $px-1 $px-3 $light-shadow;
+   border-radius: $px-4;
+  vertical-align: middle;
+  box-sizing: border-box;
+}

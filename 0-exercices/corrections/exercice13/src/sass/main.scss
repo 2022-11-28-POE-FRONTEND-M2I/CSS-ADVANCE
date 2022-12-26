@@ -1,0 +1,151 @@
+/* EXTRACT FROM PURE https://github.com/pure-css/pure */
+@import 'utils/colors';
+@import 'utils/maps';
+@import 'utils/numbers';
+@import 'utils/mixins';
+@import 'utils/maps';
+
+.pure-button {
+  font-family: inherit;
+  font-size: 100%;
+  padding: $em-05 $em-1;
+  color: $black-80;
+  border: none $black-0;
+  background-color: $light;
+  text-decoration: none;
+  border-radius: $px-2;
+}
+
+.pure-button{
+  &-hover,
+  &:hover,
+  &:focus {
+    @include black-gradient;
+  }
+}
+
+.pure-button {
+  &-active,
+  &:active {
+    box-shadow: 0 0 0 $px-1 $black-15 inset,
+    0 0 $px-6 $black-20 inset;
+    border-color: $black;
+  }
+}
+
+.pure-button {
+  &[disabled],
+  &-disabled,
+  &-disabled:hover,
+  &-disabled:focus,
+  &-disabled:active {
+    border: none;
+    background-image: none;
+    opacity: $opacity-04;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
+  }
+}
+
+.pure-button-hidden {
+  display: none;
+}
+
+.pure-button {
+  &-primary,
+  &-selected,
+  a#{&}-primary,
+  a#{&}-selected {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.pure-button-group .pure-button {
+  margin: $zero;
+  border-radius: $zero;
+  border-right: $px-1 solid $black-20;
+}
+
+.pure-button-group .pure-button:first-child {
+  border-top-left-radius: $px-2;
+  border-bottom-left-radius: $px-2;
+}
+
+.pure-button-group .pure-button:last-child {
+  border-top-right-radius: $px-2;
+  border-bottom-right-radius: $px-2;
+}
+
+@each $type in $input-types {
+  .pure-form input[type=#{$type}] {
+    @include form-styles;
+  }
+}
+
+.pure-form {
+  & select,
+  & textarea {
+    @include form-styles;
+  }
+}
+
+.pure-form {
+  & select[disabled],
+  & textarea[disabled] {
+    @include bg-cursor-color;
+  }
+}
+
+.pure-form {
+  & input[readonly],
+  & select[readonly],
+  & textarea[readonly] {
+    background-color: $light-hover;
+    /* menu hover bg color */
+    color: $grey-dark;
+    /* menu text color */
+    border-color: $grey;
+  }
+}
+
+.pure-form-aligned {
+  & input,
+  & textarea,
+  & select {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+/* Rounded Inputs */
+.pure-form {
+
+  & input.pure-input-rounded,
+  & .pure-input-rounded {
+    border-radius: $em-2;
+    padding: $em-05 $em-1;
+  }
+}
+
+@each $key,$val in $widths {
+  .pure-form .pure-input-#{$key} {
+  width: #{map_get($widths, $key, width)}
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  @each $t in $input-types {
+    .pure-form input[type=#{$t}] {
+      @include bg-bottom-d-block;
+      &[disabled] {
+        @include bg-cursor-color;
+      }
+    }
+  }
+
+  .pure-form label {
+    @include bg-bottom-d-block
+  }
+}
